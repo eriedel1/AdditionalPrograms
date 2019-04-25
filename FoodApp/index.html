@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IS Supplementary Coding Exam</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script> -->
+    <script src="form.js"></script>
+    <script src="class.js"></script>
+    <script src="display.js"></script>
+    <script src="summary.js"></script>
+</head>
+<body>
+    <!-- Tab links -->
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'AddItem')" id="defaultOpen">Add Item</button>
+        <button class="tablinks" onclick="openTab(event, 'ListItem')">List Item(s)</button>
+        <button class="tablinks" onclick="openTab(event, 'Summary')">Item Summary</button>
+    </div>
+    <!-- Tab content -->
+    <!-- Add Item Tab -->
+    <div id="AddItem" class="tabcontent">
+        <h3>Add Item</h3>
+        <button id="addEntreeEntry" type="button">Add New Entree</button>
+        <div id="addEntreeForm">
+            <form id="newEntree">
+                <br>
+                <b>Name:</b> <input type="text" name="entreeName" id="entreeName">
+                <br>
+                <b>Calories:</b> <input type="number" name="entreeCalories" id="entreeCalories">
+                <br>
+                <b>Protein Type:</b> <input type="text" name="protein" id="entreeProtein">
+                <br>
+                <button type="submit" id="addEntree">Add Entree</button>
+                <button type="reset" id="cancelEntree">Cancel</button>
+            </form>
+        </div>
+        <br>
+        <button id="addDessertEntry" type="button">Add New Dessert</button>
+        <div id="addDessertForm">
+            <form id="newDessert">
+                <br>
+                <b>Name:</b> <input type="text" name="dessertName" id="dessertName">
+                <br>
+                <b>Calories:</b> <input type="number" name="dessertCalories" id="dessertCalories">
+                <br>
+                <b>Dairy Free:</b>
+                <label><input type="radio" class="dairyFree" name="dairyFree" value="true">True</label>
+                <label><input type="radio" class="dairyFree" name="dairyFree" value="false">False</label>
+                <br>
+                <b>Gluten Free:</b>
+                <label><input type="radio" class="glutenFree" name="glutenFree" value="true">True</label>
+                <label><input type="radio" class="glutenFree" name="glutenFree" value="false">False</label>
+                <br>
+                <button type="submit" id="addDessert">Add Dessert</button>
+                <button type="reset" id="cancelDessert">Cancel</button>
+        </div>
+    </div>
+    <!-- List Item Tab -->
+    <div id="ListItem" class="tabcontent">
+        <h3>List Item(s)</h3>
+            <label class="listLabel"><input type="checkbox" class="displayOptions" name="allItems" id="allItems">Display All Items</label>
+            <label class="listLabel"><input type="checkbox" class="displayOptions" name="allEntrees" id="allEntrees">Display Entrees</label>
+            <label class="listLabel"><input type="checkbox" class="displayOptions" name="allDesserts" id="allDesserts">Display Desserts</label>
+            <label class="listLabel"><input type="checkbox" class="displayOptions" name="allDairyFree" id="allDairyFree">Display Dairy Free Desserts</label>
+            <label class="listLabel"><input type="checkbox" class="displayOptions" name="allGlutenFree" id="allGlutenFree">Display Gluten Free Desserts</label>
+        <p id="displayFood"></p>
+    </div>
+    <!-- Summary Tab -->
+    <div id="Summary" class="tabcontent">
+        <h3>Summary</h3>
+        <label class="listSummary"><input type="checkbox" class="displayResults" name="entreeSummary" id="entreeSummary">Display Entree Summary</label>
+        <label class="listSummary"><input type="checkbox" class="displayResults" name="dessertSummary" id="dessertSummary">Display Dessert Summary</label>
+        <p id="displaySummary"></p>
+    </div>
+    <!-- End of Tabs -->
+    <script src="tabs.js"></script>
+</body>
+</html>
